@@ -10,11 +10,12 @@ class DocsController < ApplicationController
     end
 
     def new
-        @doc = Doc.new
+        @doc = current_user.docs.build      # only current user can create new document
     end
 
     def create      # create does not have a view
-        @doc = Doc.new(doc_params)  # docs params are the document title and content
+        # Doc.new is replaced with current_user.docs.build
+        @doc = current_user.docs.build(doc_params)  # docs params are the document title and content
 
         if @doc.save
             redirect_to @doc        # if yes then redirect to that document that we just created
