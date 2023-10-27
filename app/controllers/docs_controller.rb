@@ -3,7 +3,8 @@ class DocsController < ApplicationController
 
     def index
         # The @docs in index.html.erb are defined below in order of when they were created
-        @docs= Doc.all.order("created_at DESC")
+        # @docs= Doc.all.order("created_at DESC")
+        @docs = Doc.where(user_id: current_user)    # documents visible to only users who created them
     end
 
     def show            # find doc
