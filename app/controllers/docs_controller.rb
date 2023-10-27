@@ -6,7 +6,7 @@ class DocsController < ApplicationController
         @docs= Doc.all.order("created_at DESC")
     end
 
-    def show
+    def show            # find doc
     end
 
     def new
@@ -23,13 +23,20 @@ class DocsController < ApplicationController
         end
     end
 
-    def edit
+    def edit            # find doc
     end
 
     def update      # update does not have a view
+        if @doc.update(doc_params)
+            redirect_to @doc        # find doc, then if the document is updated, it will save those chnages and redirect to that document
+        else
+            render 'edit'           # else render the edit page (Redirect is new HTTP request but rendering gives you chance to change and save again)
+        end
     end
 
     def destroy
+        @doc.destroy
+        redirect_to docs_path       # find doc, then redirect to the index page
     end
 
     # private methods used with above actions
