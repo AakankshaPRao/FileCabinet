@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   get 'welcome/index'   # localhost:3000/welcome/index
   root 'welcome#index'  # localhost:3000
 
+  # resources: creates all the routes for the different actions we will add to our application
+  resources :docs
+
 
 
 
