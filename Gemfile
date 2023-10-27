@@ -21,7 +21,7 @@ gem "jbuilder"
 gem "redis", ">= 4.0.1"
 
 gem 'simple_form'
-
+gem 'devise'
 
 # gem "kredis"
 

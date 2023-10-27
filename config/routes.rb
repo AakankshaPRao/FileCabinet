@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'welcome/index'   # localhost:3000/welcome/index
   root 'welcome#index'  # localhost:3000
 
