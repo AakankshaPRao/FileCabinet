@@ -20,6 +20,9 @@ gem "jbuilder"
 
 gem "redis", ">= 4.0.1"
 
+gem 'simple_form'
+
+
 # gem "kredis"
 
 # gem "bcrypt", "~> 3.1.7"
