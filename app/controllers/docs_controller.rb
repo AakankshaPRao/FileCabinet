@@ -1,6 +1,9 @@
 class DocsController < ApplicationController
+    before_action :find_doc, only: [:show, :edit, :update, :destroy]
 
     def index
+        # The @docs in index.html.erb are defined below in order of when they were created
+        @docs= Doc.all.order("created_at DESC")
     end
 
     def show
@@ -33,6 +36,7 @@ class DocsController < ApplicationController
     private
 
         def find_doc
+            @doc = Doc.find(params[:id])    # find the document by the id, then display the title and content of that document
         end
 
         def doc_params
