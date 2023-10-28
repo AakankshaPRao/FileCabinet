@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # localhost:3000 (for users who have not signed in yet!)
   root 'welcome#index'  
 
+  
 
 
 
